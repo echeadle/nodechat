@@ -1,17 +1,26 @@
 module.exports.index = index;
-module.exports.login = login;
+// module.exports.login = login;
 module.exports.loginProcess = loginProcess;
-module.exports.chat = chat;
+// module.exports.chat = chat;
 
-exports.index = function index(req, res){
-  res.render('index');
+function index(req, res){
+  res.render('index', {title: 'Index'});
 };
-function login(req, res){
-  res.send('Login');
+
+exports.login = function chat(req, res){
+res.render('login', {title: 'Login'});
 };
+
+exports.chat = function chat(req, res){
+res.render('chat', {title: 'Chat'});
+};
+
+// function login(req, res){
+//   res.send('Login');
+// };
 function loginProcess(req, res){
   res.redirect('/');
 };
-function chat(req, res){
-  res.send('Chat');
-};
+// function chat(req, res){
+//   res.send('Chat');
+// };
