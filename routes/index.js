@@ -3,15 +3,15 @@ module.exports.login = login;
 module.exports.loginProcess = loginProcess;
 module.exports.chat = chat;
 
-function index(req, res){
-res.send('Index');
+exports.index = function index(req, res){
+  res.render('index');
 };
 function login(req, res){
-res.send('Login');
+  res.send('Login');
 };
 function loginProcess(req, res){
-res.redirect('/');
+  res.redirect('/');
 };
 function chat(req, res){
-res.send('Chat');
+  res.send('Chat');
 };
