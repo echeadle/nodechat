@@ -1,10 +1,14 @@
-module.exports.index = index;
+//  module.exports.index = index;
 // module.exports.login = login;
 module.exports.loginProcess = loginProcess;
 // module.exports.chat = chat;
 
-function index(req, res){
-  res.render('index', {title: 'Index'});
+// function index(req, res){
+//   res.render('index', {title: 'Index'});
+// };
+exports.index = function index(req, res){
+  res.render('index', {title: 'Index', cookie: JSON.stringify(req.
+    cookies)});
 };
 
 exports.login = function chat(req, res){
