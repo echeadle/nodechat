@@ -6,11 +6,15 @@ module.exports.loginProcess = loginProcess;
 // function index(req, res){
 //   res.render('index', {title: 'Index'});
 // };
+// exports.index = function index(req, res){
+//   res.render('index', {title: 'Index', cookie: JSON.stringify(req.
+//     cookies)});
+// };
 exports.index = function index(req, res){
+  res.cookie('IndexCookie', 'This was set from Index');
   res.render('index', {title: 'Index', cookie: JSON.stringify(req.
-    cookies)});
+  cookies)});
 };
-
 exports.login = function chat(req, res){
 res.render('login', {title: 'Login'});
 };

@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var partials = require('express-partials');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
