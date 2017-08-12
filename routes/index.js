@@ -1,4 +1,4 @@
-//  module.exports.index = index;
+module.exports.index = index;
 // module.exports.login = login;
 module.exports.loginProcess = loginProcess;
 // module.exports.chat = chat;
@@ -10,10 +10,15 @@ module.exports.loginProcess = loginProcess;
 //   res.render('index', {title: 'Index', cookie: JSON.stringify(req.
 //     cookies)});
 // };
-exports.index = function index(req, res){
+// exports.index = function index(req, res){
+//   res.cookie('IndexCookie', 'This was set from Index');
+//   res.render('index', {title: 'Index', cookie: JSON.stringify(req.
+//   cookies)});
+// };
+function index(req, res){
   res.cookie('IndexCookie', 'This was set from Index');
   res.render('index', {title: 'Index', cookie: JSON.stringify(req.
-  cookies)});
+  cookies), session: JSON.stringify(req.session)});
 };
 exports.login = function chat(req, res){
 res.render('login', {title: 'Login'});
