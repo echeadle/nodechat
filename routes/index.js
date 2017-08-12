@@ -21,11 +21,11 @@ module.exports.loginProcess = loginProcess;
 //   cookies), session: JSON.stringify(req.session)});
 // };
 function index(req, res){
-  res.cookie('IndexCookie', 'This was set from Index');
-  res.render('index', {title: 'Index',
-  cookie: JSON.stringify(req.cookies),
-  session: JSON.stringify(req.session),
-  signedCookie: JSON.stringify(req.signedCookies)});
+  // res.cookie('IndexCookie', 'This was set from Index');
+  res.render('index', {title: 'Index' });
+  // cookie: JSON.stringify(req.cookies),
+  // session: JSON.stringify(req.session),
+  // signedCookie: JSON.stringify(req.signedCookies)});
 };
 
 exports.login = function chat(req, res){
