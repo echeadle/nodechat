@@ -1,9 +1,10 @@
-const util = require('../middleware/utilities');
+var util = require('../middleware/utilities');
 
 module.exports.index = index;
 module.exports.login = login;
 module.exports.loginProcess = loginProcess;
 module.exports.chat = chat;
+module.exports.logOut = logOut;
 
 function index(req, res){
   res.render('index', { title: 'Index' });

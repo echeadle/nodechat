@@ -31,11 +31,18 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(csrf());
 app.use(util.csrf);
 app.use(util.authenticated);
-
+console.log('Starting Routes');
+console.log('Index');
 app.get('/', routes.index);
+console.log('login');
 app.get('/login', routes.login);
+console.log('post login');
 app.post('/login', routes.loginProcess);
+console.log('logout');
+app.get('/logout', routes.logOut);
+console.log('chat');
 app.get('/chat', [util.requireAuthentication], routes.chat);
+console.log('errors');
 app.use(errorHandlers.error);
 app.use(errorHandlers.notFound);
 
