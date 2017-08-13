@@ -1,6 +1,6 @@
-var csrf = require('csurf')
+var csrf = require('csurf');
 var express = require('express');
-var app = express();ß
+var app = express();
 var partials = require('express-partials');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
 var log = require('./middleware/log');
-
+var util = require('./middleware/utilities');
 // app.get('/error', function(req, res, next){
 //   next(new Error('A contrived error'));
 // });
