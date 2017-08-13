@@ -1,9 +1,11 @@
+var csrf = require('csurf')
 var express = require('express');
-var app = express();
+var app = express();ß
 var partials = require('express-partials');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var bodyParser = require('body-parser');
 
 var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
@@ -31,9 +33,11 @@ secret: 'secret',
 saveUninitialized: true,
 resave: true,
 store: new RedisStore(
-{url: 'redis://localhost'})
-})
+  { url: 'redis://localhost' })
+  })
 );
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 // app.use(function(req, res, next){
 //   if(req.session.pageCount)
 //     req.session.pageCount++;
@@ -41,6 +45,8 @@ store: new RedisStore(
 //     req.session.pageCount = 1;
 //   next();
 // });
+app.use(csrf());
+app.use(util.csrf);
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
