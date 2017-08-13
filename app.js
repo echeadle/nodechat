@@ -11,9 +11,6 @@ var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
 var log = require('./middleware/log');
 var util = require('./middleware/utilities');
-// app.get('/error', function(req, res, next){
-//   next(new Error('A contrived error'));
-// });
 
 app.set('view engine', 'ejs');
 app.set('view options', {defaultLayout: 'layout'});
@@ -21,13 +18,7 @@ app.set('view options', {defaultLayout: 'layout'});
 app.use(partials());
 app.use(log.logger);
 app.use(express.static(__dirname + '/static'));
-// app.use(cookieParser());
 app.use(cookieParser('secret'));
-// app.use(session({
-//   secret: 'secret',
-//   resave: false,
-//   saveUninitialized: false
-// }));
 app.use(session({
 secret: 'secret',
 saveUninitialized: true,
@@ -38,13 +29,6 @@ store: new RedisStore(
 );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(function(req, res, next){
-//   if(req.session.pageCount)
-//     req.session.pageCount++;
-//   else
-//     req.session.pageCount = 1;
-//   next();
-// });
 app.use(csrf());
 app.use(util.csrf);
 
