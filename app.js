@@ -8,6 +8,7 @@ var flash = require('connect-flash');
 var RedisStore = require('connect-redis')(session);
 var bodyParser = require('body-parser');
 
+var config = require('./config');
 var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
 var log = require('./middleware/log');
@@ -28,6 +29,7 @@ app.use(session({
   })
 );
 app.use(flash());
+app.use(util.templateRoutes);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(csrf());

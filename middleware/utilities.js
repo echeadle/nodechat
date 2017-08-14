@@ -1,3 +1,10 @@
+var config = require('../config');
+
+module.exports.templateRoutes = function templateRoutes(req, res, next){
+res.locals.routes = config.routes;
+next();
+};
+
 module.exports.csrf = function csrf(req, res, next){
   res.locals.token = req.csrfToken();
   next();
