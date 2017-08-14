@@ -4,6 +4,7 @@ var app = express();
 var partials = require('express-partials');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var flash = require('connect-flash');
 var RedisStore = require('connect-redis')(session);
 var bodyParser = require('body-parser');
 
@@ -26,6 +27,7 @@ app.use(session({
     store: new RedisStore({ url: 'redis://localhost' })
   })
 );
+app.use(flash());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(csrf());
