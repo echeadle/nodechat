@@ -1,8 +1,8 @@
 var config = require('../config');
 
 module.exports.templateRoutes = function templateRoutes(req, res, next){
-res.locals.routes = config.routes;
-next();
+  res.locals.routes = config.routes;
+  next();
 };
 
 module.exports.csrf = function csrf(req, res, next){
@@ -23,7 +23,7 @@ module.exports.requireAuthentication = function
     if (req.session.isAuthenticated) {
       next();
     }else {
-      res.redirect('/login');
+      res.redirect('config.routes.login');
     }
 };
 

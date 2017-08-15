@@ -1,6 +1,6 @@
 Node Change from Building Scalable Apps with Redis and Node.js
 
-Currently on Page: 41
+Currently on Page: 42
 
 // Notes
 

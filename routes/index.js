@@ -20,7 +20,7 @@ function loginProcess(req, res){
     res.redirect('/chat');
   }else {
     req.flash('error', 'Wrong Username or Password');
-    res.redirect('/login');
+    res.redirect('config.routes.login');
   }
 };
 
