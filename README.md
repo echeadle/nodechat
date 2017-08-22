@@ -1,6 +1,6 @@
 Node Change from Building Scalable Apps with Redis and Node.js
 
-Currently on Page: 42
+Currently on Page: Current page is found in hos1/README
 
 // Notes
 
